@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Model.Musician>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="thumbnail col-sm-10 col-sm-offset-1">
+            <div class="row">
+                <div class="col-sm-10">
+                    <label class="text-primary" style="font-size:20px;">@item.Name</label>
+                </div>
+                <div class="col-sm-2 text-right">
+                    <h3><b>@item.Country</b></h3>
+                    <h4>@item.Town</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10">
+                    <p>@item.Image</p>
+                </div>
+                <div class="col-sm-2 text-right">
+                    <a asp-page="Details" class="btn btn-primary btn-sm" asp-route-id="@item.Id">Details</a>
+                </div>
+            </div>
+        </div>
+
+    }
+
+}

@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Musician Page</h2>
+<hr />
+<h3 style="padding-left:50px; color:#000000;">Musicians</h3>
+@foreach (var _musician in Model.IndexVM.Musician)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            @* Partial View *@
+            @Html.Partial("_ThumbnailMusicianPartial", Model.IndexVM.Musician.Where(u => u.Name.Equals(_musician.Name)))
+        </div>
+    </div>
+}

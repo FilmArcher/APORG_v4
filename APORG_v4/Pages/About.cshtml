@@ -1,0 +1,41 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<hr />
+
+<span><b>APORG</b> - This is an internet application, used to integrate cultural activities in one place and support the organization of cultural events.</span>
+<hr />
+<div class="row">
+    <div class="card col-md-4" style="width:18rem">
+        <img class="card-img-top" src="~/images/dym.jpg" style="width:100%; opacity:1">
+        <div class="card-body">
+            <h4 class="card-title">Damian Lipka</h4>
+            <p class="card-text">APORG Creator</p>
+        </div>
+    </div>
+    <div class="card col-md-4">
+        <h3>Hello,</h3>
+        I am Damian, I am a student at OWSiIZ in Olsztyn and I have @(DateTime.Now.Year - 1994) years
+        <br />
+        I created this application to associate all possible musical entities from this country and abroad.
+        <br />
+        The goal of associating musical entities is to make available all kinds of information on the possibilities of managing the space and time of Objects, Musicians, Organizers.
+        <br />
+        Wherever it is possible to organize an event, this site can facilitate the organizational process to a minimum.
+        <br />
+    </div>
+    <div class="col-md-4">
+        <address>
+            <strong>Contact:</strong>
+            <br />
+            <b>E-mail:</b> damiano396@wp.pl
+            <br />
+            <abbr title="PhoneNumber"><b>Phone Number:</b> 515 561 624</abbr>
+        </address>
+    </div>
+</div>
