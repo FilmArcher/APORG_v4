@@ -7,26 +7,31 @@
 {
     foreach (var item in Model)
     {
-        <div class="thumbnail col-sm-10 col-sm-offset-1">
+        <div class="thumbnail col-sm-10 col-sm-offset-1" style="background: rgba(255, 255, 255, 0.3)">
             <div class="row">
-                <div class="col-sm-10">
-                    <label class="text-primary" style="font-size:20px;">@item.Name</label>
+                <div class="col-sm-9">
+                    <label class="text-uppercase" style="font-size:20px;">@item.Name</label>
                 </div>
-                <div class="col-sm-2 text-right">
-                    <h3><b>@item.Country</b></h3>
-                    <h4>@item.Town</h4>
+                <div class="col-sm-3 text-right">
+                    <h3 title="Country"><b>@item.Country</b></h3>
+                    <h4 title="Town">@item.Town</h4>
+                    <h5 title="Region">@item.Region</h5>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10">
-                    <p>@item.Image</p>
+                <div class="row col-sm-10" style="margin-top:-8%">
+                    <div class="col-sm-4">
+                        <img src="@item.Image" width="70%" class="img-rounded" height="70%" />
+                    </div>
+                    <div class="col-sm-8">
+                        <span disabled>@item.Description</span>
+                    </div>
                 </div>
                 <div class="col-sm-2 text-right">
-                    <a asp-page="Details" class="btn btn-primary btn-sm" asp-route-id="@item.Id">Details</a>
+                    <a asp-page="MusicianDetails" class="btn btn-primary btn-sm" asp-route-id="@item.Id">Details</a>
                 </div>
             </div>
         </div>
-
     }
 
 }

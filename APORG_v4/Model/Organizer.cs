@@ -10,8 +10,6 @@ namespace APORG_v4.Model
 {
     public class Organizer
     {
-        [Key]
-        [Required]
         [ScaffoldColumn(false)]
         public int Id { get; set; }
 

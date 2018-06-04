@@ -4,8 +4,33 @@
     <UserSecretsId>aspnet-APORG_v4-7B67BAFF-3796-428C-A3C0-45A54C980643</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Pages\Musician\**" />
+    <Compile Remove="Pages\Object\**" />
+    <Compile Remove="Pages\Organizer\**" />
+    <Content Remove="Pages\Musician\**" />
+    <Content Remove="Pages\Object\**" />
+    <Content Remove="Pages\Organizer\**" />
+    <EmbeddedResource Remove="Pages\Musician\**" />
+    <EmbeddedResource Remove="Pages\Object\**" />
+    <EmbeddedResource Remove="Pages\Organizer\**" />
+    <None Remove="Pages\Musician\**" />
+    <None Remove="Pages\Object\**" />
+    <None Remove="Pages\Organizer\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="Data\Migrations\20180601192934_AddSocialMediaFKModelToDb.cs" />
     <Compile Remove="Data\Migrations\20180601192934_AddSocialMediaFKModelToDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180602171011_AddMusicianMerchTypeToDb.cs" />
+    <Compile Remove="Data\Migrations\20180602171011_AddMusicianMerchTypeToDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180602171307_AddMusicianMerchTypeToDb.cs" />
+    <Compile Remove="Data\Migrations\20180602171307_AddMusicianMerchTypeToDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180602173357_addEventToDb.cs" />
+    <Compile Remove="Data\Migrations\20180602173357_addEventToDb.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180602174234_addObjectMerchTypeToDb.cs" />
+    <Compile Remove="Data\Migrations\20180602174234_addObjectMerchTypeToDb.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Pages\_IndividualButtonPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.1.1" />

@@ -52,7 +52,7 @@ namespace APORG_v4.Model
 
         [Display(Name = "*Manager contact number")]
         [Phone]
-        [RegularExpression(@"([\+]){0,1}(0-9){2})?[\-\s]?[-]?([0-9]{3})\-?[-\s]?([0-9]{3})[-\s]\-?([0-9]{3})$", ErrorMessage = "Phone number form: 123-123-123")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$", ErrorMessage = "Phone Number Form: 123123123")]
         [Required(ErrorMessage = "Required contact manager (if no manager, enter the person responsible for contacting the artist)")]
         public string Manager_contact { get; set; }
 

@@ -17,11 +17,15 @@ namespace APORG_v4.Model
         }
 
         public DbSet<Object> Objects { get; set; }
-        //public DbSet<Musician> Musicians { get; set; }
-        //public DbSet<Organizer> Organizers { get; set; }
-        //public DbSet<Event> Events { get; set; }
-        //public DbSet<MerchType> MerchTypes { get; set; }
-        //public DbSet<ObjectSocialMedia> ObjectSocialMedias { get; set; }
+        public DbSet<Musician> Musicians { get; set; }
+        public DbSet<Organizer> Organizers { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<ObjectMerchType> ObjectMerchTypes { get; set; }
+        public DbSet<MusicianMerchType> MusicianMerchTypes { get; set; }
+        public DbSet<OrganizerMerchType> OrganizerMerchTypes { get; set; }
+        public DbSet<ObjectSocialMedia> ObjectSocialMedias { get; set; }
+        public DbSet<MusicianSocialMedia> MusicianSocialMedias { get; set; }
+        public DbSet<OrganizerSocialMedia> OrganizerSocialMedias { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

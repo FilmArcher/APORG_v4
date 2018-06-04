@@ -8,6 +8,12 @@ namespace APORG_v4.Model
         [ScaffoldColumn(false)]
         public int Id { get; set; }
 
+        [Required]
+        public int ObjectId { get; set; }
+
+        [ForeignKey("ObjectId")]
+        public virtual Object Object { get; set; }
+
         [Display(Name = "Media Name")]
         [StringLength(69)]
         public string MediaName { get; set; }

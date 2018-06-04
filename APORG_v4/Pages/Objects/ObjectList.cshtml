@@ -1,0 +1,258 @@
+﻿@page "{id:int?}/{handler?}"
+@model ObjectListModel
+@using APORG_v4.Utility
+
+@{
+}
+<br />
+<h2>ObjectList Page</h2>
+<br />
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        @Model.Message
+    </div>
+
+}
+@if (User.IsInRole(SD.AdminEndUser) || User.IsInRole(SD.CustomerEndUser))
+{
+    <a asp-page="Create" type="button" class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus"></span>
+    &nbsp; Create New Object</a>
+}
+@if (Model.Objects.Count() > 0)
+{
+    
+    <form method="post">
+        <div>
+            <br />
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].object_name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].country)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].region)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].town)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].street)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].no_building)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].post_code)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].object_desc)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].manager_name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].manager_lastname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].manager_contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].manager_email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].object_surface)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].cubature)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].stage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].stage_surface)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].parking)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].backstage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].backstage_surface)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].backstage_description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].cloakroom)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].garden)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].acoustics)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].acoustics_contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].safeguard)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].lights)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].lighting_technician)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].lighting_technician_contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].bar)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].frontline)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].frontline_description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].backline)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Objects[0].backline_description)
+                    </th>
+                    <th></th>
+
+
+                </tr>
+                @foreach (var item in Model.Objects)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.object_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.region)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.town)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.no_building)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.post_code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.object_desc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.manager_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.manager_lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.manager_contact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.manager_email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.object_surface)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.cubature)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.stage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.stage_surface)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.parking)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.backstage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.backstage_surface)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.backstage_description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.cloakroom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.garden)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.acoustics)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.acoustics_contact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.safeguard)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.lights)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.lights_description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.lighting_technician)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.lighting_technician_contact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.bar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.frontline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.frontline_description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.backline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.backline_description)
+                    </td>
+                    <td>
+                        @Html.Partial("_TableButtonsPartial", new Model.IndividualButtonPartial { Id = item.Id })
+                    </td>
+                </tr>
+                }
+            </table>
+        </div>
+    </form>
+}
+else
+{
+    <p>No Objects found</p>
+}

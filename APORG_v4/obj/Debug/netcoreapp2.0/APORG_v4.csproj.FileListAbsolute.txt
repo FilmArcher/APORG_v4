@@ -1,0 +1,12 @@
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\bin\Debug\netcoreapp2.0\APORG_v4.deps.json
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\bin\Debug\netcoreapp2.0\APORG_v4.runtimeconfig.json
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\bin\Debug\netcoreapp2.0\APORG_v4.runtimeconfig.dev.json
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\bin\Debug\netcoreapp2.0\APORG_v4.dll
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\bin\Debug\netcoreapp2.0\APORG_v4.pdb
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\APORG_v4.csproj.CoreCompileInputs.cache
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\APORG_v4.AssemblyInfoInputs.cache
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\APORG_v4.AssemblyInfo.cs
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\APORG_v4.dll
+c:\users\damian\documents\visual studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\APORG_v4.pdb
+C:\Users\Damian\Documents\Visual Studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Damian\Documents\Visual Studio 2017\Projects\APORG_v4\APORG_v4\obj\Debug\netcoreapp2.0\APORG_v4.csprojAssemblyReference.cache

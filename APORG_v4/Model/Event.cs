@@ -11,8 +11,6 @@ namespace APORG_v4.Model
 {
     public class Event
     {
-        [Key]
-        [Required]
         [ScaffoldColumn(false)]
         public int id { get; set; }    
 

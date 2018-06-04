@@ -82,7 +82,7 @@ namespace APORG_v4.Model
         public bool stage { get; set; }
 
         [Display(Name = "Stage surface")]
-        public float stage_surface { get; set; }
+        public string stage_surface { get; set; }
 
         [Display(Name = "Stage comments")]
         public string Stage_comments { get; set; }
@@ -94,7 +94,7 @@ namespace APORG_v4.Model
         public bool backstage { get; set; }
 
         [Display(Name = "Backstage surface")]
-        public double backstage_surface { get; set; }
+        public string backstage_surface { get; set; }
 
         [Display(Name = "Description of the backstage")]
         [DataType(DataType.MultilineText)]
@@ -111,7 +111,7 @@ namespace APORG_v4.Model
 
         [Display(Name = "Acoustics phone number")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Phone Number Form: 123-123-123")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$", ErrorMessage = "Phone Number Form: 123123123")]
         public string acoustics_contact { get; set; }
 
         [Display(Name = "Safeguard")]
@@ -130,7 +130,7 @@ namespace APORG_v4.Model
         [Display(Name = "Lighting technician phone number")]
         [Phone]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Phone Number Form: 123-123-123")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$", ErrorMessage = "Phone Number Form: 123123123")]
         public string lighting_technician_contact { get; set; }
 
         [Display(Name = "Bar")]
@@ -156,7 +156,7 @@ namespace APORG_v4.Model
         [Display(Name = "Image to upload")]
         public string Image { get; set; }
 
-        [Display(Name = "User")]
+        [Required]
         public string UserId { get; set; }
 
         [NotMapped]
