@@ -28,12 +28,16 @@
     <Compile Remove="Data\Migrations\20180602173357_addEventToDb.Designer.cs" />
     <Compile Remove="Data\Migrations\20180602174234_addObjectMerchTypeToDb.cs" />
     <Compile Remove="Data\Migrations\20180602174234_addObjectMerchTypeToDb.Designer.cs" />
+    <Compile Remove="Pages\Objects\Index - kopiować.cshtml.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Pages\_IndividualButtonPartial.cshtml" />
+    <Content Remove="Pages\_ThumbnailObjectPartial - kopiować.cshtml" />
+    <Content Remove="wwwroot\js\JavaScript.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.1.1" />
+    <PackageReference Include="jQuery" Version="3.3.1" />
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" PrivateAssets="All" />
@@ -42,5 +46,10 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Pages\Organizers\Index.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 </Project>

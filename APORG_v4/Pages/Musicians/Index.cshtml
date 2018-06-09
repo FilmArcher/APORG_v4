@@ -1,18 +1,38 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Musician Page";
 }
+<form method="get" asp-page="Index">
+    <br />
+    <h1 style="padding-left:50px; color:#000000;">Musicians</h1>
+    <hr />
+    <table id="table_id" class="display" style="background: rgba(255, 255, 255, 0.4)">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Town</th>
+                <th>Region</th>
+                <th>Details</th>
+            </tr>
+        </thead>
 
-<h2>Musician Page</h2>
-<hr />
-<h3 style="padding-left:50px; color:#000000;">Musicians</h3>
-@foreach (var _musician in Model.IndexVM.Musician)
-{
-    <div class="row">
-        <div class="col-sm-12">
-            @* Partial View *@
-            @Html.Partial("_ThumbnailMusicianPartial", Model.IndexVM.Musician.Where(u => u.Name.Equals(_musician.Name)))
-        </div>
-    </div>
-}
+        <tbody>
+            @foreach (var item in Model.Musicians)
+            {
+                <tr>
+                    <td height="150px" width="200px"><img src="@Html.DisplayFor(m => item.Image)" width="100%" height="100%" /> </td>
+                    <td style="font-size:x-large"><b>@Html.DisplayFor(m => item.Name)</b></td>
+                    <td>@Html.DisplayFor(m => item.Country)</td>
+                    <td>@Html.DisplayFor(m => item.Town)</td>
+                    <td>@Html.DisplayFor(m => item.Region)</td>
+                    <td><a asp-page="MusicianDetails" class="btn btn-primary btn-sm" asp-route-id="@item.Id">Details</a></td>
+                </tr>
+
+
+            }
+        </tbody>
+    </table>
+</form>

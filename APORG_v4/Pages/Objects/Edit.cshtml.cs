@@ -51,9 +51,9 @@ namespace APORG_v4.Pages.Objects
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if(!ModelState.IsValid)
+            if(ModelState.IsValid)
             {
-                return RedirectToPage("ObjectList");
+                return Page();
 
             }
 
@@ -79,7 +79,7 @@ namespace APORG_v4.Pages.Objects
                 Object.Image = @"\images\" + Object.Id + extension;
             }
 
-            
+
             if (Object.Image != null)
             {
                 ObjectFromDb.Image = Object.Image;
@@ -119,8 +119,6 @@ namespace APORG_v4.Pages.Objects
             ObjectFromDb.frontline_description = Object.frontline_description;
             ObjectFromDb.backline = Object.backline;
             ObjectFromDb.backline_description = Object.backline_description;
-            ObjectFromDb.UserId = Object.UserId;
-            ObjectFromDb.ApplicationUser = Object.ApplicationUser;
 
             //_db.Attach(Object).State = EntityState.Modified;
 

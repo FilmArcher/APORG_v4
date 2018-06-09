@@ -35,10 +35,15 @@ namespace APORG_v4.Model
         [Display(Name = "Town")]
         public string Town { get; set; }
 
+        [Display(Name = "Description")]
+        public string Description { get; set; }
+
         [Required(ErrorMessage = "Required contact")]
         [Phone]
         [Display(Name = "Contact")]
         public string Contact { get; set; }
 
+        [Display(Name = "Image to upload")]
+        public string Image { get; set; }
     }
 }

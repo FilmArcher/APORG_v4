@@ -9,6 +9,7 @@ namespace APORG_v4.Utility
     {
         public const string DefaultObjectImage = "default.png";
         public const string DefaultMusicianImage = "default.png";
+        public const string DefaultOrganizerImage = "default.png";
         public const string AdminEndUser = "Admin";
         public const string CustomerEndUser = "Customer";
     }

@@ -1,51 +1,46 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Object Page";
 }
-
-<h2>Object Page</h2>
 <form method="get" asp-page="Index">
-    <div style="height:60px;">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-12 text-right">
-                    <label class="radio-inline">
-                        @Html.RadioButton("option", "name") Name
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButton("option", "country") Country
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButton("option", "region") Region
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButton("option", "town") Town
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="pull-right">
-                    <button type="submit" name="submit" value="Search" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-search"></span> Search
-                    </button>
-                </div>
-                <div class="pull-right">
-                    @Html.Editor("search", new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-        </div>
-    </div>
+    <br />
+    <h1 style="padding-left:50px;">Objects</h1>
     <hr />
 
-    <h3 style="padding-left:50px; color:#000000;">Objects</h3>
-    @foreach (var _object in Model.IndexVM.Object)
-    {
-        <div class="row">
+    @*<div class="row">
             <div class="col-sm-12">
-                @* Partial View *@
+                @* Partial View
                 @Html.Partial("_ThumbnailObjectPartial", Model.IndexVM.Object.Where(u => u.Id.Equals(_object.Id)))
             </div>
-        </div>
-    }
-</form>
+        </div>*@
+
+    <table id="table_id" class="display" style="background: rgba(255, 255, 255, 0.4)">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Town</th>
+                <th>Region</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Objects)
+            {
+                <tr>
+                    <td height="150px" width="200px"><img src="@Html.DisplayFor(m => item.Image)" width="100%" height="100%" /> </td>
+                    <td style="font-size:x-large"><b>@Html.DisplayFor(m => item.object_name)</b></td>
+                    <td>@Html.DisplayFor(m => item.country)</td>
+                    <td>@Html.DisplayFor(m => item.town)</td>
+                    <td>@Html.DisplayFor(m => item.region)</td>
+                    <td><a asp-page="ObjectDetails" class="btn btn-primary btn-sm" asp-route-id="@item.Id">Details</a></td>
+                </tr>
+
+
+            }
+        </tbody>
+    </table>
+        </form>

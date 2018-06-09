@@ -36,7 +36,8 @@ namespace APORG_v4.Pages.Objects
         public async Task OnGet()
         {         
             string AspNetUser_ID = Common.ExtensionMethods.getUserId(this.User);
-            Objects = await _db.Objects.OrderBy(c=>c.object_name).ToListAsync();
+            Objects = await _db.Objects.Where(c => c.UserId == AspNetUser_ID).ToListAsync();
+
             
         }
 

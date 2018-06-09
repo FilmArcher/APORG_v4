@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using APORG_v4.Utility;
 using Microsoft.AspNetCore.Identity;
 using APORG_v4.Data;
+using System.Linq;
 
 namespace APORG_v4.Pages.Musicians
 {
@@ -35,8 +36,8 @@ namespace APORG_v4.Pages.Musicians
         public async Task OnGet()
         {         
             string AspNetUser_ID = Common.ExtensionMethods.getUserId(this.User);
-            Musicians = await _db.Musicians.ToListAsync();
-            
+            Musicians = await _db.Musicians.Where(c => c.UserId == AspNetUser_ID).ToListAsync();
+
         }
 
         public async Task<IActionResult> OnPostDelete(int id)

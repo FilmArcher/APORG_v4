@@ -355,6 +355,10 @@ namespace APORG_v4.Data.Migrations
                     b.Property<string>("Country")
                         .IsRequired();
 
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Image");
+
                     b.Property<string>("Name")
                         .IsRequired();
 

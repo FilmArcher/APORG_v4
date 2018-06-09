@@ -6,8 +6,10 @@ using APORG_v4.Data;
 using APORG_v4.Model;
 using APORG_v4.ViewModel;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace APORG_v4.Pages.Objects
 {
@@ -15,72 +17,22 @@ namespace APORG_v4.Pages.Objects
     {
         private readonly ApplicationDbContext _db;
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public IndexModel(ApplicationDbContext db, IHostingEnvironment hostingEnvironment)
+        public IndexModel(ApplicationDbContext db, IHostingEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager)
         {
             _db = db;
             _hostingEnvironment = hostingEnvironment;
+            _userManager = userManager;
         }
 
-        [BindProperty]
-        public IndexViewModel IndexVM { get; set; }
+        public IList<Model.Object> Objects { get; set; }
 
-        public async Task OnGet(string option = null, string search = null)
+        public async Task OnGet()
         {
-            if (search != null)
-            {
-                var user = new ApplicationUser();
-                List<Model.Object> ObjectList = new List<Model.Object>();
-                if (option == "name")
-                {
-                    ObjectList = _db.Objects.Where(o => o.Id == Convert.ToInt32(search)).ToList();
-                }
-                else
-                {
-                    if (option == "country")
-                    {
-                        //ObjectList = _db.Objects.Where(o => o.country.ToLower().Contains(search.ToLower())).FirstOrDefault();
-                        ObjectList = _db.Objects.Where(o => o.country == Convert.ToString(search)).ToList();
-                    }
-                    else
-                    {
-                        if (option == "region")
-                        {
-                            ObjectList = _db.Objects.Where(o => o.region == Convert.ToString(search)).ToList();
-                        }
-                        else
-                        {
-                            if (option == "town")
-                            {
-                                ObjectList = _db.Objects.Where(o => o.town == Convert.ToString(search)).ToList();
-                            }
-                        }
-                    }
-                }
+            string AspNetUser_ID = Common.ExtensionMethods.getUserId(this.User);
+            Objects = await _db.Objects.OrderBy(c => c.object_name).ToListAsync();
 
-                if (user != null || ObjectList.Count > 0)
-                {
-                    if (ObjectList.Count == 0)
-                    {
-                        ObjectList = _db.Objects.Where(o => o.UserId == user.Id).OrderByDescending(o => o.object_name).ToList();
-                    }
-
-                    IndexVM = new IndexViewModel()
-                    {
-                        Object = _db.Objects.OrderBy(m => m.object_name),
-                    };
-                }
-            }
-            else
-            {
-
-
-
-                IndexVM = new IndexViewModel()
-                {
-                    Object = _db.Objects.OrderBy(m => m.object_name),
-                };
-            }
         }
     }
 }

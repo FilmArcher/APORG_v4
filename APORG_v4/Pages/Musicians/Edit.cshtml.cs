@@ -34,7 +34,7 @@ namespace APORG_v4.Pages.Musicians
 
         public async Task<IActionResult> OnGet(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -51,9 +51,9 @@ namespace APORG_v4.Pages.Musicians
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if(!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return RedirectToPage("MusicianList");
+                return Page();
 
             }
 
@@ -61,12 +61,12 @@ namespace APORG_v4.Pages.Musicians
             var files = HttpContext.Request.Form.Files;
             var MusicianFromDb = _db.Musicians.Where(m => m.Id == Musician.Id).FirstOrDefault();
 
-            if (files[0] != null && files[0].Length >0)
+            if (files[0] != null && files[0].Length > 0)
             {
                 var uploads = Path.Combine(webRootPath, "images");
                 var extension = MusicianFromDb.Image.Substring(MusicianFromDb.Image.LastIndexOf("."), MusicianFromDb.Image.Length - MusicianFromDb.Image.LastIndexOf("."));
 
-                if(System.IO.File.Exists(Path.Combine(uploads, Musician.Id+extension)))
+                if (System.IO.File.Exists(Path.Combine(uploads, Musician.Id + extension)))
                 {
                     System.IO.File.Delete(Path.Combine(uploads, Musician.Id + extension));
                 }
@@ -79,7 +79,7 @@ namespace APORG_v4.Pages.Musicians
                 Musician.Image = @"\images\" + Musician.Id + extension;
             }
 
-            
+
             if (Musician.Image != null)
             {
                 MusicianFromDb.Image = Musician.Image;
@@ -90,7 +90,6 @@ namespace APORG_v4.Pages.Musicians
             MusicianFromDb.Region = Musician.Region;
             MusicianFromDb.Town = Musician.Town;
             MusicianFromDb.Description = Musician.Description;
-            MusicianFromDb.Image = Musician.Image;
             MusicianFromDb.Biography = Musician.Biography;
             MusicianFromDb.First_name_manager = Musician.First_name_manager;
             MusicianFromDb.Last_name_manager = Musician.Last_name_manager;
@@ -98,8 +97,8 @@ namespace APORG_v4.Pages.Musicians
             MusicianFromDb.Creation_date = Musician.Creation_date;
             MusicianFromDb.Merch = Musician.Merch;
             MusicianFromDb.Discography = Musician.Discography;
-            MusicianFromDb.UserId = Musician.UserId;
-            MusicianFromDb.ApplicationUser = Musician.ApplicationUser;
+
+            //_db.Attach(Object).State = EntityState.Modified;
 
             await _db.SaveChangesAsync();
             Message = "Musician updated successfully!";

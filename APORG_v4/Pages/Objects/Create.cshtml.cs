@@ -47,7 +47,7 @@ namespace APORG_v4.Pages.Objects
         {
             string AspNetUser_ID = Common.ExtensionMethods.getUserId(this.User); 
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 return Page();
             }
