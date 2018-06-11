@@ -20,26 +20,28 @@ namespace APORG_v4.Model
         [ForeignKey("UserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
-        [Display(Name = "Event Name")]
+        [Display(Name = "Name")]
         [Required(ErrorMessage = "Required event name")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Required event date")]
-        [Display(Name = "Event Date")]
+        [Display(Name = "Date")]
         public DateTime Date { get; set; }
 
-        [Display(Name = "Event Place")]
-        [Required(ErrorMessage = "Required event place")]
-        public Object Place { get; set; }
+        [Display(Name = "Place")]
+        public int ObjectId { get ; set; }
 
-        [Display(Name = "Event Descryption")]
+        [ForeignKey("ObjectId")]
+        public virtual Object Object { get; set; }
+       
+        [Display(Name = "Descryption")]
         [Required(ErrorMessage = "Required event descryption")]
         public string Descryption { get; set; }
 
-        [Display(Name = "Event image to upload")]
+        [Display(Name = "Image to upload")]
         public string Image { get; set; }
 
         [Display(Name = "Tickets")]
-        public string Tickets { get; set; }
+        public int TicketId { get; set; }
     }
 }

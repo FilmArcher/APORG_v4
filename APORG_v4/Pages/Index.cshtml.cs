@@ -28,7 +28,6 @@ namespace APORG_v4.Pages
             IndexVM = new IndexViewModel()
             {
                 Object = _db.Objects.OrderBy(m => m.object_name),
-                //Musician = _db.Musicians.OrderBy(c => c.Name)
             };
         }
     }

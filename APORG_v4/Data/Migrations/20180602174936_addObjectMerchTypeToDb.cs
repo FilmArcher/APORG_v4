@@ -31,6 +31,7 @@ namespace APORG_v4.Data.Migrations
                         principalTable: "Objects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+
                 });
 
 
@@ -38,6 +39,8 @@ namespace APORG_v4.Data.Migrations
                 name: "IX_ObjectMerchTypes_ObjectId",
                 table: "ObjectMerchTypes",
                 column: "ObjectId");
+
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

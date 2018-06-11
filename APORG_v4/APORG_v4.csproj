@@ -29,8 +29,10 @@
     <Compile Remove="Data\Migrations\20180602174234_addObjectMerchTypeToDb.cs" />
     <Compile Remove="Data\Migrations\20180602174234_addObjectMerchTypeToDb.Designer.cs" />
     <Compile Remove="Pages\Objects\Index - kopiować.cshtml.cs" />
+    <Compile Remove="Pages\Objects\TEST.cshtml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="Pages\Objects\TEST.cshtml" />
     <Content Remove="Pages\_ThumbnailObjectPartial - kopiować.cshtml" />
     <Content Remove="wwwroot\js\JavaScript.js" />
   </ItemGroup>
@@ -48,6 +50,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="Pages\Events\Index.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="Pages\Organizers\Index.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

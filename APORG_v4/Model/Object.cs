@@ -62,8 +62,7 @@ namespace APORG_v4.Model
         [Display(Name = "Manager phone number")]
         [DataType(DataType.PhoneNumber)]
         [Phone]
-        //[StringLength(20, MinimumLength = 9)]
-        //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Phone Number Form: 123-123-123")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$", ErrorMessage = "Phone Number Form: 123123123")]
         public string manager_contact { get; set; }
 
         [Display(Name = "Manager E-mail")]

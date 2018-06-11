@@ -1,10 +1,6 @@
 ﻿using APORG_v4.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace APORG_v4.Model
 {
@@ -26,6 +22,7 @@ namespace APORG_v4.Model
         public DbSet<ObjectSocialMedia> ObjectSocialMedias { get; set; }
         public DbSet<MusicianSocialMedia> MusicianSocialMedias { get; set; }
         public DbSet<OrganizerSocialMedia> OrganizerSocialMedias { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
